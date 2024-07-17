@@ -15,5 +15,6 @@ jobs:
     uses: estefa-932014/devops-templates/.github/workflows/build-deploy-s3.yml@main
     with:
       node-version: '18.x'
-    #secrets:
-    #  conexion_token: ${{ secrets.PAT_TOKEN }}
+    secrets:
+      access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}  
