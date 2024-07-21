@@ -20,7 +20,7 @@ jobs:
       with:
         node-version: '18.x'
     - name: Run composite action
-      uses: estefa-932014/devops-templates/.github/actions/react@main
+      uses: estefa-932014/devops-templates/.github/actions/react.yml@main
 
 #    uses: estefa-932014/devops-templates/.github/workflows/build-deploy-s3.yml@main
 #    with:
