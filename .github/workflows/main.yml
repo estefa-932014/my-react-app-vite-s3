@@ -12,10 +12,20 @@ on:
 jobs:
   # Build Job
   build:
-    uses: estefa-932014/devops-templates/.github/workflows/build-deploy-s3.yml@main
-    with:
-      node-version: '18.x'
-    secrets:
-      access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}  
-      bucket_react: ${{ secrets.S3_BUCKET }}  
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18.x'
+    - name: Run composite action
+      uses: estefa-932014/devops-templates/.github/actions/react@main
+
+#    uses: estefa-932014/devops-templates/.github/workflows/build-deploy-s3.yml@main
+#    with:
+#      node-version: '18.x'
+#    secrets:
+#      access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#      secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}  
+#      bucket_react: ${{ secrets.S3_BUCKET }}  
