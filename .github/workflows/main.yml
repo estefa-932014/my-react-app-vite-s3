@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: Build & Deploy AWS S3
 
 on:
   push:
