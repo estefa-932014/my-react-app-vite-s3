@@ -16,6 +16,7 @@ jobs:
     with:
       node-version: '18.x'
   deploy:
+    needs: build
     uses: estefa-932014/devops-templates/.github/workflows/deploy-s3-react.yml@main
     secrets:
       access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
