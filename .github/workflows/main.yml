@@ -20,7 +20,6 @@ jobs:
     uses: estefa-932014/devops-templates/.github/workflows/deploy-s3-react.yml@main
     secrets:
       access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}  
-      bucket_react: ${{ secrets.S3_BUCKET }}  
+      secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}   
     with:
       bucket_react: ${{ vars.S3_BUCKET }}
