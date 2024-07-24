@@ -1,4 +1,4 @@
-name: Build & Deploy AWS S3
+name: Build S3
 
 on:
   push:
