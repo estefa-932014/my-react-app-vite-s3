@@ -1,0 +1,25 @@
+name: Build & Deploy AWS S3
+
+on:
+  push:
+    branches:
+      - main1
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      var1:
+        description: "description 1"
+        required: true
+      var2:
+        description: "description 2"
+        required: true
+jobs:
+  # Build Job
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+        
