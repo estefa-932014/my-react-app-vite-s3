@@ -16,13 +16,15 @@ on:
           required: true     
 jobs:
   build:
+    env:
+      bucket_name: ${{ env.S3_BUCKET }}
     #runs-on: ubuntu-20.04
     runs-on: ubuntu-latest
     steps:
       - run: echo ${{ inputs.codigoApp}}  
       - run: echo ${{ inputs.nombreApp}}
         #Variable de repositorio
-      - run: echo ${{ env.S3_BUCKET }}
+      - run: echo ${{ env.bucket_name }}
       
       - name: Checkout
         uses: actions/checkout@v4.1.5
