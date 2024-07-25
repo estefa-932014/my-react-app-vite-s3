@@ -22,7 +22,7 @@ jobs:
       - run: echo ${{ inputs.codigoApp}}  
       - run: echo ${{ inputs.nombreApp}}
         #Variable de repositorio
-      - run: echo ${{ vars.S3_BUCKET }}
+      - run: echo ${{ env.S3_BUCKET }}
       
       - name: Checkout
         uses: actions/checkout@v4.1.5
