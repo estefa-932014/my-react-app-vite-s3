@@ -17,14 +17,14 @@ on:
 jobs:
   build:
     env:
-      bucket_name: ${{ env.S3_BUCKET }}
+      bucket_region: ${{ secrets.S3_BUCKET_REGION }}
     #runs-on: ubuntu-20.04
     runs-on: ubuntu-latest
     steps:
       - run: echo ${{ inputs.codigoApp}}  
       - run: echo ${{ inputs.nombreApp}}
         #Variable de repositorio
-      - run: echo ${{ env.bucket_name }}
+      - run: echo ${{ env.bucket_region }}
       
       - name: Checkout
         uses: actions/checkout@v4.1.5
