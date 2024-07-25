@@ -47,8 +47,8 @@ jobs:
           
   # Deploy Job
   deploy-dev:
-    environment:
-        name: DEV
+#    environment:
+#        name: DEV
     needs: build
 
     runs-on: ubuntu-latest
