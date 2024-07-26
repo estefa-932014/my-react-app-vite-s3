@@ -19,10 +19,13 @@ jobs:
     #runs-on: ubuntu-20.04
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ inputs.codigoApp}}  
-      - run: echo ${{ inputs.nombreApp}}
-        #Variable de repositorio
-      - run: echo ${{ vars.S3_BUCKET }}
+      - name: inputs
+        run: |
+          echo "Mostrar input ${{ inputs.codigoApp}}"
+          echo "Mostrar input ${{ inputs.nombreApp}}"
+          
+      - name: variables  
+        run: echo "mostrar variable de repositorio ${{ vars.S3_BUCKET }}"
       
       - name: Checkout
         uses: actions/checkout@v4.1.5
@@ -46,15 +49,13 @@ jobs:
           path: ./dist
           
   # Deploy Job
-  deploy-dev:
-    environment:
-        name: DEV
+  deploy:
+
     needs: build
 
     runs-on: ubuntu-latest
     
     steps:
-      - run: echo ${{vars.SERVIDOR}}
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
